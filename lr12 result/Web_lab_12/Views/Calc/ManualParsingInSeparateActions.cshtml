@@ -1,0 +1,20 @@
+﻿@model Web_lab_12.Models.CalculatorModel
+<h1>ManualWithSeparateHandlers</h1>
+<form asp-action="ManualParsingInSingleAction" method="post">
+    <div>
+        <input asp-for="Number1" type="number" step="any" />
+    </div>
+    <div>
+        <select asp-for="Operation" asp-items="@(new SelectList(new[] {
+            new { Value = "+", Text = "+" },
+            new { Value = "-", Text = "-" },
+            new { Value = "*", Text = "*" },
+            new { Value = "/", Text = "/" }
+        }, "Value", "Text"))">
+        </select>
+    </div>
+    <div>
+        <input asp-for="Number2" type="number" step="any" />
+    </div>
+    <button type="submit">Submit</button>
+</form>

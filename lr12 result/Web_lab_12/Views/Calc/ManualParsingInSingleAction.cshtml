@@ -1,0 +1,20 @@
+﻿@model Web_lab_12.Models.CalculatorModel
+<h1>Manual</h1>
+<form asp-action="ManualParsingInSingleAction" method="post">
+    <div>
+        @Html.TextBoxFor(m => m.Number1, new { type = "number", step = "any" })
+    </div>
+    <div>
+        @Html.DropDownListFor(m => m.Operation, new SelectList(new[] {
+        new { Value = "+", Text = "+" },
+        new { Value = "-", Text = "-" },
+        new { Value = "*", Text = "*" },
+        new { Value = "/", Text = "/" }
+        }, "Value", "Text"), Model.Operation)
+    </div>
+    <div>
+        @Html.TextBoxFor(m => m.Number2, new { type = "number", step = "any" })
+    </div>
+     
+    <button type="submit">Submit</button>
+</form>

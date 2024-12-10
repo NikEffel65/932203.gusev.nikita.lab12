@@ -1,0 +1,15 @@
+﻿@page
+@model Web_lab_12.Models.CalculatorModel
+
+<h1>Result</h1>
+<h3 class="bs">
+    @Model.Number1 @Model.Operation @Model.Number2 =
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <span class="text-danger">@Model.ErrorMessage</span>
+    }
+    else
+    {
+        @Model.Result
+    }
+</h3>
